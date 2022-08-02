@@ -1,0 +1,14 @@
+@use "../../../styles/var.scss" as varible;
+
+.select {
+  background-color: varible.$color--ui;
+  border-radius: varible.$size--border-radius;
+  color: varible.$color--title;
+  font-family: varible.$font--lato;
+  font-size: varible.$size--text;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
