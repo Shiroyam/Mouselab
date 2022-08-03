@@ -1,0 +1,30 @@
+@use "../../../styles/var.scss" as varible;
+
+.button {
+  background-color: varible.$color--ui;
+  color: varible.$color--title;
+  font-family: varible.$font--lato;
+  font-size: varible.$size--text;
+  border-radius: varible.$size--border-radius;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 135px;
+  height: 25px;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: varible.$color--btn-hover;
+    color: varible.$color--title;
+  }
+
+  &:active {
+    border: 3px solid varible.$color--secondary;
+    transition: all 10s;
+  }
+}
+
+.active {
+  background-color: varible.$color--primary !important;
+  color: varible.$color--background !important;
+}
