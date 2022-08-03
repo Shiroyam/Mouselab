@@ -12,12 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#000000" />
-        <meta name="author" content="TechGo" />
-        <meta
-          name="description"
-          content="C TechGo выбор экскурсии быстрее и проще"
-        />
-        <title>Tech Go</title>
+        <meta name="author" content="MouseLab" />
+        <meta name="description" content="MouseLab" />
+        <title>MouseLab</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
