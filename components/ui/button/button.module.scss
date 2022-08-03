@@ -28,3 +28,22 @@
   background-color: varible.$color--primary !important;
   color: varible.$color--background !important;
 }
+
+.textButton{
+  background-color: rgba(28, 28, 28, 0) !important;
+  font-size: 12px;
+  color: varible.$color--ui;
+  height: auto !important;
+  width: auto !important;
+  padding: 0 2px;
+
+  &:active {
+    border: none !important;
+    color: varible.$color--ui;
+    transition: all 0.4s !important;
+  }
+}
+
+.textButtunActive{
+  color: varible.$color--primary;
+}

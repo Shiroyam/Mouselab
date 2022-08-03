@@ -9,17 +9,25 @@ interface IButton
   > {
   children: string;
   active?: boolean;
+  textButton?: boolean;
+  textButtunActive?: boolean;
 }
 
 export const Button: FC<IButton> = ({
   children,
   className,
   active,
+  textButton,
+  textButtunActive,
   ...props
 }: IButton) => {
   return (
     <button
-      className={cn(styles.button, className, { [styles.active]: active })}
+      className={cn(styles.button, className, {
+        [styles.active]: active,
+        [styles.textButton]: textButton,
+        [styles.textButtunActive]: textButtunActive,
+      })}
       {...props}
     >
       {children}

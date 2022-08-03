@@ -1,0 +1,13 @@
+@use "../../styles/var.scss" as varible;
+
+.header {
+  display: flex;
+  height: 30px !important;
+  .text {
+    margin-left: 14px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    color: varible.$color--secondary;
+  }
+}

@@ -2,6 +2,7 @@ import "../styles/globals.scss";
 import "../styles/var.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { Layout } from "../hoc/Layout/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,10 +18,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="author" content="MouseLab" />
         <meta name="description" content="MouseLab" />
         <title>MouseLab</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/Logo.svg" />
       </Head>
 
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
