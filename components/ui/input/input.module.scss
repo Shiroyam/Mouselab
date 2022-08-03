@@ -1,0 +1,13 @@
+@use "../../../styles/var.scss" as varible;
+
+.input {
+  background-color: varible.$color--ui;
+  border-radius: varible.$size--border-radius;
+  color: varible.$color--title;
+  font-family: varible.$font--lato;
+  font-size: varible.$size--text;
+  caret-color: varible.$color--primary;
+  border: none;
+  outline: none;
+  padding: 0 5px;
+}
