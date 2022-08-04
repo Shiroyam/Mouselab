@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import { Config } from "../components/config/Config";
+import { Field } from "../components/field/Field";
 
 const Home: NextPage = () => {
-  return <></>;
+  return <Field />;
 };
 
 export default Home;

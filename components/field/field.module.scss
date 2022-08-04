@@ -1,0 +1,21 @@
+@use "../../styles/var.scss" as varible;
+.field{
+    border: 1px solid varible.$color--ui;
+    border-radius: varible.$size--border-radius;
+    background-color: varible.$color--field;
+    .start{
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: varible.$color--ui;
+        &:hover{
+            background-color: #252525;
+            opacity: 0.2;
+            text-decoration: underline;
+            color: varible.$color--title;
+        }
+    }
+}
