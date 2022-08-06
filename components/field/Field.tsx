@@ -1,23 +1,46 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Button } from "../ui/button/Button";
 import { AiOutlineReload } from "react-icons/ai";
 import styles from "./field.module.scss";
+import { Circle } from "../circle/Circle";
+import { useAppDispatch, useTypesSelector } from "../../hook/useTypeSelector";
+import {
+  onChangeTime,
+  onClickRelaod,
+  onClickStart,
+} from "../../store/start/reducer";
+import { Timer } from "../timer/Timer";
+import { useRouter } from "next/router";
+import { checkQuery } from "../../helpers/checkQuery";
 
 export const Field: FC = () => {
-  const [flag, setFlag] = useState<boolean>(true);
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+  const { flagStart } = useTypesSelector((state) => state.startReducer);
+
+  const { timeQuery } = router.query;
+  const timeNumber: number = checkQuery(timeQuery);
 
   return (
     <>
+      <Timer />
       <div style={{ width: "100%", height: 550 }} className={styles.field}>
-        {flag && (
-          <div onClick={() => setFlag(false)} className={styles.start}>
+        {flagStart ? (
+          <div
+            onClick={() => dispatch(onClickStart())}
+            className={styles.start}
+          >
             Click to start!
           </div>
+        ) : (
+          <Circle />
         )}
       </div>
       <Button textButton={true}>
         <AiOutlineReload
-          onClick={() => setFlag(true)}
+          onClick={() => (
+            dispatch(onClickRelaod()), dispatch(onChangeTime(timeNumber))
+          )}
           className={styles.reload}
         />
       </Button>

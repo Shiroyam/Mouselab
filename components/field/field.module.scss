@@ -1,5 +1,6 @@
 @use "../../styles/var.scss" as varible;
 .field{
+    position: relative;
     border: 1px solid varible.$color--ui;
     border-radius: varible.$size--border-radius;
     background-color: varible.$color--field;

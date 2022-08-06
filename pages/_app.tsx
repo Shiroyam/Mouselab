@@ -1,8 +1,12 @@
 import "../styles/globals.scss";
 import "../styles/var.scss";
 import type { AppProps } from "next/app";
-import Head from "next/head";
 import { Layout } from "../hoc/Layout/Layout";
+import { storeSetup } from "../store/store";
+import { Provider } from "react-redux";
+import Head from "next/head";
+
+const store = storeSetup();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -21,9 +25,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/Logo.svg" />
       </Head>
 
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Provider store={store}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Provider>
     </>
   );
 }

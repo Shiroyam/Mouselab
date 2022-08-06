@@ -1,0 +1,6 @@
+@use "../../styles/var.scss" as varible;
+
+.timer{
+    color: varible.$color--primary;
+    font-size: 20px;
+}

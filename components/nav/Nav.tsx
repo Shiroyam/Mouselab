@@ -17,7 +17,7 @@ export const Nav: FC = () => {
         </Link>
       </li>
       <li>
-        <Link href="/">
+        <Link href="/keyboard">
           <Button textButton={true}>
             <BsKeyboard className={styles.logo} />
           </Button>
