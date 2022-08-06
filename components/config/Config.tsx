@@ -11,7 +11,7 @@ export const Config: FC = () => {
       <Button textButton={true} textButtunActive={false}>
         quantity
       </Button>
-      {true ? (
+      {true ? ( 
         <div className={styles.quantity}>
           <Button textButton={true} textButtunActive={true}>
             10

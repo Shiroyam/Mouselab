@@ -1,21 +1,11 @@
 @use "../../styles/var.scss" as varible;
 
 .nav {
-  margin-top: 10px;
+  display: flex;
+  list-style: none;
   .logo {
     width: 20px;
     height: 20px;
-    cursor: pointer;
     margin: 0 10px;
-    color: varible.$color--ui;
-    transition: all 0.4s;
-
-    &:hover {
-      color: varible.$color--secondary;
-    }
-
-    &:active {
-      color: varible.$color--ui;
-    }
   }
 }

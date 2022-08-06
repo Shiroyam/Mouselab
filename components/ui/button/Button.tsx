@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, FC } from "react";
+import { ButtonHTMLAttributes, DetailedHTMLProps, FC, ReactNode } from "react";
 import cn from "classnames";
 import styles from "./button.module.scss";
 
@@ -7,7 +7,7 @@ interface IButton
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  children: string;
+  children: string | ReactNode;
   active?: boolean;
   textButton?: boolean;
   textButtunActive?: boolean;
