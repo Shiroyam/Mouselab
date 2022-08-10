@@ -1,76 +1,78 @@
 import { useRouter } from "next/router";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useAppDispatch } from "../../hook/useTypeSelector";
 import { onChangeTime } from "../../store/start/reducer";
 import { Button } from "../ui/button/Button";
+import { configTimes } from "../../utils/data/time.data";
+import { configQuantity } from "../../utils/data/quantity.data";
+import { parserQuery } from "../../utils/helpers/helpersQuery";
 import styles from "./config.module.scss";
 
 export const Config: FC = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
+  let { timeQuery } = router.query;
+
+  const [flagConfig, setFlagConfig] = useState<boolean>(true);
   return (
-    <div>
-      <Button textButton={true} textButtunActive={true}>
+    <nav className={styles.nav}>
+      <Button
+        onClick={() => setFlagConfig(true)}
+        textButton={true}
+        textButtunActive={flagConfig}
+      >
         time
       </Button>
-      <Button textButton={true} textButtunActive={false}>
+      <Button
+        onClick={() => setFlagConfig(false)}
+        textButton={true}
+        textButtunActive={!flagConfig}
+        disabled
+      >
         quantity
       </Button>
-      {false ? (
-        <div className={styles.quantity}>
-          <Button textButton={true} textButtunActive={true}>
-            10
-          </Button>
-          <Button textButton={true} textButtunActive={false}>
-            25
-          </Button>
-          <Button textButton={true} textButtunActive={false}>
-            50
-          </Button>
-          <Button textButton={true} textButtunActive={false}>
-            100
-          </Button>
-        </div>
+      {!flagConfig ? (
+        <ul className={styles.quantity}>
+          {configQuantity.map((configQuantity) => (
+            <>
+              <li>
+                <Button
+                  onClick={() =>
+                    router.push({
+                      query: { quantityQuery: configQuantity.quantity },
+                    })
+                  }
+                  textButton={true}
+                  textButtunActive={false}
+                >
+                  {configQuantity.quantity}
+                </Button>
+              </li>
+            </>
+          ))}
+        </ul>
       ) : (
-        <div className={styles.time}>
-          <Button
-            onClick={() => (
-              dispatch(onChangeTime(15)), router.push({ query: { timeQuery: 15 } })
-            )}
-            textButton={true}
-            textButtunActive={true}
-          >
-            15
-          </Button>
-          <Button
-            onClick={() => (
-              dispatch(onChangeTime(30)), router.push({ query: { timeQuery: 30 } })
-            )}
-            textButton={true}
-            textButtunActive={false}
-          >
-            30
-          </Button>
-          <Button
-            onClick={() => (
-              dispatch(onChangeTime(60)), router.push({ query: { timeQuery: 60 } })
-            )}
-            textButton={true}
-            textButtunActive={false}
-          >
-            60
-          </Button>
-          <Button
-            onClick={() => (
-              dispatch(onChangeTime(120)), router.push({ query: { timeQuery: 120 } })
-            )}
-            textButton={true}
-            textButtunActive={false}
-          >
-            120
-          </Button>
-        </div>
+        <ul className={styles.time}>
+          {configTimes.map((configTime) => (
+            <>
+              <li>
+                <Button
+                  onClick={() => (
+                    dispatch(onChangeTime(15)),
+                    router.push({ query: { timeQuery: configTime.time } })
+                  )}
+                  textButton={true}
+                  textButtunActive={
+                    parserQuery(timeQuery) === parserQuery(configTime.query)
+                  }
+                >
+                  {configTime.time}
+                </Button>
+              </li>
+            </>
+          ))}
+        </ul>
       )}
-    </div>
+    </nav>
   );
 };

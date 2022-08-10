@@ -11,7 +11,7 @@ import {
 } from "../../store/start/reducer";
 import { Timer } from "../timer/Timer";
 import { useRouter } from "next/router";
-import { checkQuery } from "../../helpers/checkQuery";
+import { parserQuery } from "../../utils/helpers/helpersQuery";
 
 export const Field: FC = () => {
   const dispatch = useAppDispatch();
@@ -19,7 +19,7 @@ export const Field: FC = () => {
   const { flagStart } = useTypesSelector((state) => state.startReducer);
 
   const { timeQuery } = router.query;
-  const timeNumber: number = checkQuery(timeQuery);
+  const timeNumber: number = parserQuery(timeQuery);
 
   return (
     <>

@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { getRandom } from "../../helpers/getRandom";
+import { getRandom } from "../../utils/helpers/getRandom";
 import cn from "classnames";
 import styles from "./circle.module.scss";
 
@@ -13,7 +13,7 @@ export const Circle: FC = () => {
     setX(getRandom(10, 1000));
     setY(getRandom(10, 500));
   };
-  
+
   return (
     <div
       onClick={onClick}

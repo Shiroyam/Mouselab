@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { FC, useEffect } from "react";
-import { checkQuery } from "../../helpers/checkQuery";
+import { parserQuery } from "../../utils/helpers/helpersQuery";
 import { useAppDispatch, useTypesSelector } from "../../hook/useTypeSelector";
 import { onChangeTime, onClickRelaod } from "../../store/start/reducer";
 import styles from "./timer.module.scss";
@@ -16,7 +16,7 @@ export const Timer: FC = () => {
     }, 1000);
 
     let { timeQuery } = router.query;
-    const timeNumber: number = checkQuery(timeQuery);
+    const timeNumber: number = parserQuery(timeQuery);
 
     if (time === 0) {
       dispatch(onClickRelaod());
@@ -30,7 +30,7 @@ export const Timer: FC = () => {
 
   useEffect(() => {
     let { timeQuery } = router.query;
-    const timeNumber: number = checkQuery(timeQuery);
+    const timeNumber: number = parserQuery(timeQuery);
     dispatch(onChangeTime(timeNumber));
   }, [router.query]);
 
