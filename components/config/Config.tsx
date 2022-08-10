@@ -13,10 +13,10 @@ export const Config: FC = () => {
   const router = useRouter();
   let { timeQuery } = router.query;
 
-  const [flagConfig, setFlagConfig] = useState<boolean>(true);
+  const [flagConfig, setFlagConfig] = useState<boolean>(true);                                                                  
   return (
-    <nav className={styles.nav}>
-      <Button
+    <div className={styles.nav                                                                }>                                              
+      <Button                                                                                                                               
         onClick={() => setFlagConfig(true)}
         textButton={true}
         textButtunActive={flagConfig}
@@ -73,6 +73,6 @@ export const Config: FC = () => {
           ))}
         </ul>
       )}
-    </nav>
+    </div>
   );
 };

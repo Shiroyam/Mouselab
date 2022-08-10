@@ -1,0 +1,14 @@
+@use "../../styles/var.scss" as varible;
+
+.login {
+  display: flex;
+  flex-direction: column;
+  .header {
+    color: varible.$color--secondary;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .input {
+    margin-bottom: 10px;
+  }
+}

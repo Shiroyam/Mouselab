@@ -9,7 +9,6 @@ import {
   onClickRelaod,
   onClickStart,
 } from "../../store/start/reducer";
-import { Timer } from "../timer/Timer";
 import { useRouter } from "next/router";
 import { parserQuery } from "../../utils/helpers/helpersQuery";
 
@@ -23,7 +22,6 @@ export const Field: FC = () => {
 
   return (
     <>
-      <Timer />
       <div style={{ width: "100%", height: 550 }} className={styles.field}>
         {flagStart ? (
           <div
