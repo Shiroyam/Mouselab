@@ -35,3 +35,16 @@ ul, li {
   list-style: none;
   list-style-type: none;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: varible.$color--primary;
+  border-radius: 2px !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: 0 0;
+}
