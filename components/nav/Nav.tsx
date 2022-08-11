@@ -18,7 +18,7 @@ export const Nav: FC = () => {
         </Link>
       </li>
       <li>
-        <Link href="/">
+        <Link href="/leaderboard">
           <Button textButton={true}>
             <BiCrown className={styles.logo} />
           </Button>

@@ -1,0 +1,37 @@
+@use "../../styles/var.scss" as varible;
+
+.t1 {
+  overflow-y: scroll;
+  max-height: 510px;
+  .table {
+    color: varible.$color--ui;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+    td:nth-child(2) {
+      text-align: start;
+    }
+    .column {
+      background-color: varible.$color--field;
+      color: varible.$color--secondary;
+      td {
+        height: 35px;
+        text-align: center;
+      }
+      td:nth-child(2) {
+        text-align: start;
+      }
+      td:first-child {
+        border-radius: varible.$size--border-radius 0 0
+          varible.$size--border-radius;
+      }
+      td:last-child {
+        border-radius: 0 varible.$size--border-radius
+          varible.$size--border-radius 0;
+      }
+      &:nth-child(even) {
+        background-color: varible.$color--background !important;
+      }
+    }
+  }
+}
