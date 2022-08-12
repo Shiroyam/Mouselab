@@ -1,15 +1,36 @@
 @use "../../styles/var.scss" as varible;
 
 .leaderboard {
+  position: relative;
   width: 100%;
-  display: grid;
-  grid-column-gap: 25px;
-  grid-template-columns: 1fr 1fr;
+
   .table {
     .title {
       font-weight: 600;
       font-size: 25px;
       line-height: 38px;
+      color: varible.$color--secondary;
+    }
+  }
+  .arrows {
+    cursor: pointer;
+    color: varible.$color--secondary;
+    .arrow {
+      height: 30px;
+      width: 30px;
+    }
+    .arrow:nth-child(2) {
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      transform: rotate(180deg);
+      right: 0;
+    }
+
+    &:hover {
+      color: varible.$color--primary;
+    }
+    &:active {
       color: varible.$color--secondary;
     }
   }

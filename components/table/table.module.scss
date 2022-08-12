@@ -1,8 +1,9 @@
 @use "../../styles/var.scss" as varible;
 
-.t1 {
+.wrapper {
+  min-height: 300px;
+  max-height: 580px;
   overflow-y: scroll;
-  max-height: 510px;
   .table {
     color: varible.$color--ui;
     border-collapse: collapse;
